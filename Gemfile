@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll", ENV["JEKYLL_VERSION"] == "patch" ? { github: "ashmaroli/jekyll", branch: "optimize-site-each-site-file" }
+gem "jekyll", ENV["JEKYLL_VERSION"] == "patch" ? { github: "ashmaroli/jekyll", branch: "optimize-site-each-site-file" } : ENV["JEKYLL_VERSION"]
 
 group :jekyll_plugins do
   gem "jekyll-brotli"
