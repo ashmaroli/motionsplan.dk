@@ -1,18 +1,20 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.3"
+gem "jekyll", ENV["JEKYLL_VERSION"] == "patch" ? { github: "ashmaroli/jekyll", branch: "optimize-site-each-site-file" }
+
 group :jekyll_plugins do
-    gem 'jekyll-paginate'
-    gem 'jekyll-feed'
-    gem 'jemoji'
-    gem 'jekyll-redirect-from'
-    gem 'jekyll-gist'
-    gem 'jekyll-include-cache'
-    gem 'jekyll-sitemap'
-    gem 'jekyll-gzip'
-    gem 'jekyll-brotli'
+  gem "jekyll-brotli"
+  gem "jekyll-feed"
+  gem "jekyll-gist"
+  gem "jekyll-gzip"
+  gem "jekyll-include-cache"
+  gem "jekyll-paginate"
+  gem "jekyll-redirect-from"
+  gem "jekyll-sitemap"
+  gem "jemoji"
 end
-gem 'classifier-reborn'
-gem 'gsl', git: 'https://github.com/SciRuby/rb-gsl.git', ref: '103a3e1'
-gem 'html-proofer'
+
+gem "classifier-reborn"
+gem "gsl", github: "SciRuby/rb-gsl", ref: "103a3e1"
+gem "html-proofer"
 gem "minimal-mistakes-jekyll", "~> 4.24"
