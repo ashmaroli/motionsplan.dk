@@ -1,0 +1,24 @@
+name: Build site using Jekyll
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: "ubuntu-latest"
+    env:
+      JEKYLL_VERSION: ${{ matrix.jekyll_version }}
+    strategy:
+      matrix:
+        jekyll_version:
+        - "~> 4.2.0"
+        - "~> 4.3.0"
+        - "patch"
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          bundler-cache: true
+      - name: Build site
+        run: bundle exec jekyll build --profile --trace
