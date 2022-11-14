@@ -12,7 +12,6 @@ jobs:
       matrix:
         jekyll_version:
         - "~> 4.2.0"
-        - "~> 4.3.0"
         - "patch"
     steps:
       - uses: actions/checkout@v3
